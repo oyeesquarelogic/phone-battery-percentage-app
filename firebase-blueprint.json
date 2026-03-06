@@ -1,0 +1,35 @@
+{
+  "entities": {
+    "BatteryNote": {
+      "title": "Battery Note",
+      "description": "A note about battery health or performance recorded by the user.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "The UID of the user who created the note."
+        },
+        "text": {
+          "type": "string",
+          "description": "The transcribed text of the note."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The timestamp when the note was created."
+        },
+        "batteryLevel": {
+          "type": "number",
+          "description": "The battery level at the time of recording."
+        }
+      },
+      "required": ["userId", "text", "createdAt", "batteryLevel"]
+    }
+  },
+  "firestore": {
+    "/notes": {
+      "schema": "BatteryNote",
+      "description": "Collection of battery notes recorded by users."
+    }
+  }
+}
